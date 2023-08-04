@@ -1,0 +1,79 @@
+Register with Registry_Server(GET): ------
+    message {
+        'type': 'Register'
+        'name': 'server_name'
+        'address': 'server_addr'
+    }
+Register with Registry_Server(RET): ----------------
+    message {
+        'type': 'RegisterResponse'
+        'status': 'SUCCESS/FAIL'
+    }
+
+Get server List from Registry_server(GET): ------------
+    message {
+        'type': 'GetServerList'
+        'uuid': 'Client UUID'
+    }
+
+Get server List from Registry_server(RET): ------------
+    message {
+        'type': 'ServerListResponse'
+        'servers' : 'List of servers'
+    }
+
+Request from client to join server(GET): ---
+    message {
+        'type': 'JoinServer'
+        'uuid': 'Client UUID'
+    }
+
+Request from client to join server(RET): -------------
+    message {
+        'type': 'JoinResponse'
+        'status': 'SUCCESS/FAIL'
+    }
+
+Leave Server Request(GET): ------
+    mesage {
+        'type': 'LeaveServer'
+        'uuid': 'Client UUID'
+    }
+
+Leave Server Request(RET): ------------
+    message {
+        'type' : 'LeaveResponse'
+        'status': 'SUCCESS/FAIL'
+    }
+
+
+GetArticle Request(GET): -------
+    mesage {
+        'type': 'GetArticle'
+        'ArticleType' = 'Type of article either SPORTS,FASHION,POLITICS'
+        'Author' = 'Author name
+        'time' : 'Time after which to fetch articles'
+        'uuid': 'Client UUID'
+    }
+
+GetArticle Request(RET): --------------
+    mesage {
+        'type': 'ArticleResponse'
+        'status': 'SUCCESS/FAIL'
+        'articles': 'List of articles'
+    }
+
+Publish Article Request(GET):
+    message {
+        'type': 'PublishArticle'
+        'ArticleType': 'Type of article either SPORTS,FASHION,POLITICS'
+        'Author' : 'Name of author'
+        'Content': 'Content of the article'
+        'uuid' : 'UUID of Client'
+    }
+
+Publish Article Request(RET): ------------
+    message {
+        'type': 'PublishResponse'
+        'status': 'SUCCESS/FAIL'
+    }
